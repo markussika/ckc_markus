@@ -7,11 +7,16 @@
 </head>
 <body>
     
-<h1>Posts</h1>
+<h1>Pasākumi</h1>
 
 <ul>
 <?php foreach($pasakumi as $pasakums) { ?>
-  <li> <?= $pasakums["date_and_time"]. "/". ["title"]."/". ["venue"] . "/"    ?> </li>
+  <li> <?= $pasakums["date_and_time"]. " / ". $pasakums["title"]." / ". $pasakums["venue"] . " / "    ?> 
+  <form style="display:inline-block" class="delete-form" method="POST" action="/delete">
+      <input type="hidden" name="id" value="<?= $post["id"] ?>" />
+      <button>delete</button>
+    </form>
+    </li>
 <?php } ?>
 </ul>
 

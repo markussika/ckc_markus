@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1><?= $post["title"] ?></h1>
+<h1><?= htmlspecialchars($pasakums["title"]) ?></h1>
 
 </body>
 </html>

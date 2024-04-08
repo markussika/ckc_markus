@@ -11,7 +11,8 @@
 
 <ul>
 <?php foreach($pasakumi as $pasakums) { ?>
-  <li> <?= $pasakums["date_and_time"]. " / ". $pasakums["title"]." / ". $pasakums["venue"] . " / "    ?> 
+  <li>
+  <a href="/show?id=<?= $pasakums["id"] ?>"> <?= htmlspecialchars($pasakums["date_and_time"]). " / ". htmlspecialchars($pasakums["title"])." / ". htmlspecialchars($pasakums["venue"]) . " / "    ?> </a>
   <form style="display:inline-block" class="delete-form" method="POST" action="/delete">
       <input type="hidden" name="id" value="<?= $post["id"] ?>" />
       <button>delete</button>

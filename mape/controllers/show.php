@@ -5,8 +5,8 @@ $config = require("config.php");
 
 $db = new Database($config);
 
-$query = "SELECT * FROM posts WHERE id = :id";
+$query = "SELECT * FROM pasakumi WHERE id = :id";
 $params = [":id" => $_GET["id"]];
-$post = $db->execute($query, $params)->fetch();
+$pasakums = $db->execute($query, $params)->fetch();
 
-require "views/posts/show.view.php";
+require "views/show.view.php";
